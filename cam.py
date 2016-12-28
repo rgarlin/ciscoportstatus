@@ -19,7 +19,7 @@ with open('fetch.txt') as f:
         dssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
 		dssh.connect(line, username='rancid', password='D@rkM@yo')
-        	stdin, stdout, stderr = dssh.exec_command('sh interface status | in notconnect')
+        	stdin, stdout, stderr = dssh.exec_command('sh mac address ')
 		mystring =  stdout.readlines()
 		##print (mystring)
 		for line1 in mystring:
