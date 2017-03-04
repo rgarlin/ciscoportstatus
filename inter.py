@@ -18,7 +18,7 @@ with open('fetch.txt') as f:
         dssh = paramiko.SSHClient()
         dssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
-		dssh.connect(line, username='rancid', password='D@rkM@yo')
+		dssh.connect(line, username='username', password='pass')
         	stdin, stdout, stderr = dssh.exec_command('sh interface status | in notconnect')
 		mystring =  stdout.readlines()
 		##print (mystring)
