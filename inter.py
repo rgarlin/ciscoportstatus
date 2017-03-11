@@ -42,9 +42,3 @@ with open('fetch.txt') as f:
 dssh.close()
 
 print "Finished" 
-
-
-
-
-
-
