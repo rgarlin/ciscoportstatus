@@ -14,8 +14,8 @@ count = 0
 
 ##fname = raw_input("What is the name of the building:  ")
 with open('/home/rgarlin/Documents/python-script/connected/dorms.txt') as f:
-    for line in f:
-        line = line.strip()
+    for device in f:
+        deice = device.strip()
         dssh = paramiko.SSHClient()
         dssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
