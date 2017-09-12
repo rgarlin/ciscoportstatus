@@ -11,9 +11,12 @@ import time
 now = datetime.datetime.now().date()
 today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 count = 0
+path = '/home/rgarlin/Documents/python-script/connected/'
+
 
 ##fname = raw_input("What is the name of the building:  ")
-with open('/home/rgarlin/Documents/python-script/connected/dorms.txt') as f:
+os.chdir(path)
+with open('horms.txt') as f:
     for device in f:
         device = device.strip()
         dssh = paramiko.SSHClient()
@@ -27,7 +30,7 @@ with open('/home/rgarlin/Documents/python-script/connected/dorms.txt') as f:
 			newline1 = line1[:10] + ',' + line1[10:29] + ',' + line1[29:42]  + ',' + line1[42:53]  + ',' + line1[53:60] + ',' + line1[60:67]  + ',' + line1[67:90]
 			line2 = newline1.split(',')
 			try:
-				os.chdir('/home/rgarlin/Documents/python-script/connected/')
+				os.chdir(path)
 				fname = open(line, 'r')
 				for linefname in fname:
 					line3 = linefname.split(',')
@@ -43,7 +46,7 @@ with open('/home/rgarlin/Documents/python-script/connected/dorms.txt') as f:
 				for line4 in mystring:
 					newline = line4[:10] + ',' + line4[10:29] + ',' + line4[29:42]  + ',' + line4[42:53]  + ',' + line4[53:60] + ',' + line4[60:67]  + ',' + line4[67:90]  
 					##print newline
-					os.chdir('/home/rgarlin/Documents/python-script/connected/')
+					os.chdir(path)
 					f = open(line, 'a+')
                                 	f.write(line + ',' + str(now) + ',' + newline)
                                 	f.close()
@@ -63,6 +66,7 @@ dssh.close()
 
 endtime = datetime.datetime.now().strftime("%H:%M:%S")
 
-summary = open('/home/rgarlin/Documents/python-script/connected/dormssummary.txt', 'a+')
+os.chdir(path)
+summary = open('dormssummary.txt', 'a+')
 summary.write(str(count) + ',' + str(today) + ' , ' + str(endtime) + '\n') 
 summary.close() 
