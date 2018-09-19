@@ -11,7 +11,7 @@ import re
 count = 0
 now = datetime.datetime.now()
 
-##fname = raw_input("What is the name of the building:  ")
+##  show connected ports
 with open('fetch.txt') as f:
     for line in f:
         line = line.strip()
@@ -21,10 +21,9 @@ with open('fetch.txt') as f:
 		dssh.connect(line, username='user', password='pass')
         	stdin, stdout, stderr = dssh.exec_command('sh interface status | in notconnect')
 		mystring =  stdout.readlines()
-		##print (mystring)
 		for line1 in mystring:
 			line2 = line1.split()
-			f = open('dormsconnected.txt',  'a+')
+			f = open('inputfile.txt',  'a+')
        			f.write(line + ' ' +line2[0] + " " +line2[1] + '\n')
 			f.close()
 	except paramiko.AuthenticationException:
