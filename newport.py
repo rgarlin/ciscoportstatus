@@ -11,7 +11,7 @@ import re
 count = 0
 now = datetime.datetime.now()
 
-##  show connected ports
+##  show connected ports from a file
 with open('fetch.txt') as f:
     for line in f:
         line = line.strip()
