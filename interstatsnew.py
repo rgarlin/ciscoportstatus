@@ -60,7 +60,7 @@ with open('horms.txt') as f:
 		j.close()
 	except socket.error:
 		j = open('error.txt', 'a+')		
-		j.write(line + '=== Device unreachable\n')
+		j.write(line + '=== Device  not reachable\n')
 		j.close()       
 dssh.close()
 
