@@ -56,7 +56,7 @@ with open('horms.txt') as f:
    		j.close()
 	except paramiko.SSHException:
 		j = open('error.txt', 'a+')		
-		j.write(line + '=== Issues with ssh service \n')
+		j.write(line + '=== Issues with ssh  \n')
 		j.close()
 	except socket.error:
 		j = open('error.txt', 'a+')		
