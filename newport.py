@@ -11,7 +11,7 @@ import re
 count = 0
 now = datetime.datetime.now()
 
-##  show connected ports from a file
+## opens up a file of switches and shows a list of connected ports 
 with open('fetch.txt') as f:
     for line in f:
         line = line.strip()
