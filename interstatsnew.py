@@ -45,7 +45,6 @@ with open('horms.txt') as f:
 			except IOError:
 				for line4 in mystring:
 					newline = line4[:10] + ',' + line4[10:29] + ',' + line4[29:42]  + ',' + line4[42:53]  + ',' + line4[53:60] + ',' + line4[60:67]  + ',' + line4[67:90]  
-					##print newline
 					os.chdir(path)
 					f = open(line, 'a+')
                                 	f.write(line + ',' + str(now) + ',' + newline)
@@ -56,7 +55,7 @@ with open('horms.txt') as f:
    		j.close()
 	except paramiko.SSHException:
 		j = open('error.txt', 'a+')		
-		j.write(line + '=== Issues with ssh  \n')
+		j.write(line + '=== Issues with ssh \n')
 		j.close()
 	except socket.error:
 		j = open('error.txt', 'a+')		
